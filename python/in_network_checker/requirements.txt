@@ -1,0 +1,4 @@
+jupyter==1.0.0
+pokitdok==2.3
+Flask==0.10.1
+flask-wtf>=0.9.0

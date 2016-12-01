@@ -1,0 +1,43 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Check if your doctor is in Cigna's network</h1>
+  <form action="" method="post" name="in_network_checker">
+      {{ form.hidden_tag() }}
+      <p>
+          Your First Name:<br>
+          {{ form.first_name(size=80) }}<br>
+      </p>
+      <p>
+          Your Last Name:<br>
+          {{ form.last_name(size=80) }}<br>
+      </p>
+      <p>
+          Your Cigna Member ID:<br>
+          {{ form.member_id(size=80) }}<br>
+      </p>
+      <p>
+          Your Birth Date (YYYY-MM-DD):<br>
+          {{ form.birth_date(size=80) }}<br>
+      </p>
+      <p>Example info (but you can use any Doctor's NPI): <br>
+            "first_name": "JEROME", <br>
+            "last_name": "AYA-AY", <br>
+            "npi": "1467560003" <br>
+      </p>
+      <p>
+          Your doctor's NPI:<br>
+          {{ form.npi(size=80) }}<br>
+      </p>
+      <p>
+          Your doctor's first name:<br>
+          {{ form.dr_first_name(size=80) }}<br>
+      </p>
+      <p>
+          Your doctor's last name name:<br>
+          {{ form.dr_last_name(size=80) }}<br>
+      </p>
+      <p><input type="submit" value="check Cigna's network"></p>
+  </form>
+{% endblock %}
