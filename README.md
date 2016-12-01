@@ -1,4 +1,4 @@
-# Prototypes
+## Prototypes
 
 The repository is home to a simple demos to illustrate how to use the PokitDok APIs. 
 Unless otherwise noted, most projects will have:
@@ -8,7 +8,7 @@ Unless otherwise noted, most projects will have:
 
 
 ## Prerequisites
-Update your $HOME/.bashrc to export PD_PLATFORM_* environment variables. These variables store the Platform
+Update your $HOME/.bashrc to export POKITDOK_* environment variables. These variables store the
 client credentials for your PokitDok App (you should never check your client_id and secret into publicly available code)
 
 ```bash
