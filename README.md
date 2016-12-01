@@ -8,7 +8,7 @@ Unless otherwise noted, most projects will have:
 
 
 ## Prerequisites
-Update your $HOME/.bashrc to export POKITDOK_* environment variables. These variables store the
+Update your `$HOME/.bashrc` to export `POKITDOK_*` environment variables. These variables store the
 client credentials for your PokitDok App (you should never check your client_id and secret into publicly available code)
 
 ```bash
