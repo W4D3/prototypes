@@ -3,7 +3,7 @@ from wtforms import StringField, BooleanField
 from wtforms.validators import DataRequired
 
 
-class LoginForm(Form):
+class EligibilityCheck(Form):
     """
     Simple login class to capture the required fields for an eligibility chck
     """

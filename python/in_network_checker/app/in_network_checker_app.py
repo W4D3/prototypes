@@ -1,7 +1,7 @@
 from app import app
 from app import pd
 import json
-from .forms import LoginForm
+from .forms import EligibilityCheck
 from flask import render_template
 
 # index view function suppressed for brevity
@@ -9,7 +9,7 @@ from flask import render_template
 @app.route('/in_network_checker', methods=['GET', 'POST'])
 def driver():
     # make a simple form
-    form = LoginForm()
+    form = EligibilityCheck()
     # the value of this parameter is inherited from: flask.ext.wtf.Form
     if form.validate_on_submit():
         # get all of the data from your LoginForm
