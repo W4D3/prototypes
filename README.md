@@ -8,13 +8,21 @@ Unless otherwise noted, most projects will have:
 
 
 ## Prerequisites
-Update your `$HOME/.bashrc` to export `POKITDOK_*` environment variables. These variables store the
-client credentials for your PokitDok App (you should never check your client_id and secret into publicly available code)
+The following steps create enviornment varibles in your system for your PokitDok client_id and client_secret. 
 
+First: open your `.bashrc` file in your text editor of choice. (I prefer using vi from a terminal):
 ```bash
 vi $HOME/.bashrc
-export POKITDOK_CLIENT_ID=<client id>
-export POKITDOK_CLIENT_SECRET=<client secret>
-source $HOME/.bashrc
 ```
 
+Next, add the two lines below to update your `.bashrc` to export `POKITDOK_*` environment variables. You will need to use your client_id and client_secret for your PokitDok application. These variables store the client credentials for your PokitDok App (you should never check your client_id and secret into publicly available code)
+
+```bash
+export POKITDOK_CLIENT_ID=<client id>
+export POKITDOK_CLIENT_SECRET=<client secret>
+```
+Lastly, open a terminal and source your `.bashrc` to make the variables accessible in your localhost:
+
+```
+source $HOME/.bashrc
+```
