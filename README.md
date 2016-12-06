@@ -29,4 +29,4 @@ source $HOME/.bashrc
 
 Once you have set up your environment variables, go to the specific project's README for more set up details:
 
-(Cigna's In-Network Checker)[https://github.com/denisekgosnell/prototypes/tree/master/python/in_network_checker]
+[Cigna's In-Network Checker](https://github.com/denisekgosnell/prototypes/tree/master/python/in_network_checker)
