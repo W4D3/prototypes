@@ -62,14 +62,14 @@ def eligibility(params):
         # from Cigna, the information about in-network is available at this level of the response
         messages = eligibility_check["data"]["coverage"]["messages"]
         return_payload = "No information available from Cigna for provider {} {} with NPI {}".format(request_data["provider"]["first_name"],
-                                                                                                     request_data["provider"]["first_name"],
+                                                                                                     request_data["provider"]["last_name"],
                                                                                                      request_data["provider"]["npi"])
         for message in messages:
             message_text = message["message"]
             keys_to_check = ["npi", "NPI"]
             if any(key in message_text for key in keys_to_check):
                 return_payload = "Your Network Status for provider {} {} with NPI {}: ".format(request_data["provider"]["first_name"],
-                                                                                               request_data["provider"]["first_name"],
+                                                                                               request_data["provider"]["last_name"],
                                                                                                request_data["provider"]["npi"])
                 return_payload += message_text
     except Exception:
