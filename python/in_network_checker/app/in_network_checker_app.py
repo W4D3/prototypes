@@ -43,7 +43,7 @@ def index():
 def eligibility(params):
     # properly format the input parameters into a PokitDok Eligibility Call
     # documentation: https://platform.pokitdok.com/documentation/v4/#eligibility
-    eligibility_check = pd.eligibility({
+    request_data = {
         "member": {
             "birth_date": params["birth_date"],
             "first_name": params["first_name"],
@@ -56,10 +56,22 @@ def eligibility(params):
             "npi": params["npi"]
         },
         "trading_partner_id": "cigna"
-    })
+    }
+    eligibility_check = pd.eligibility(request_data)
     try:
         # from Cigna, the information about in-network is available at this level of the response
-        return_payload = eligibility_check["data"]["coverage"]["messages"]
+        messages = eligibility_check["data"]["coverage"]["messages"]
+        return_payload = "No information available from Cigna for provider {} {} with NPI {}".format(request_data["provider"]["first_name"],
+                                                                                                     request_data["provider"]["first_name"],
+                                                                                                     request_data["provider"]["npi"])
+        for message in messages:
+            message_text = message["message"]
+            keys_to_check = ["npi", "NPI"]
+            if any(key in message_text for key in keys_to_check):
+                return_payload = "Your Network Status for provider {} {} with NPI {}: ".format(request_data["provider"]["first_name"],
+                                                                                               request_data["provider"]["first_name"],
+                                                                                               request_data["provider"]["npi"])
+                return_payload += message_text
     except Exception:
         # if it fails, produce the whole eligibility response for debugging
         return_payload = eligibility_check
