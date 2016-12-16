@@ -13,6 +13,11 @@ Then, activate your environment:
 source venv/bin/activate
 ```
 
+Source your client_id and client_secret:
+```
+source $HOME/.bashrc
+```
+
 Finally, run the app:
 ```
 PYTHONPATH=. python run.py
